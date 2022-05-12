@@ -6,6 +6,7 @@ const Coin = ({name, price}) => {
         <div>
         <h1>{name}</h1>
         <h2>{price}</h2>
+        <p>Zajebioza</p>
         </div>
     )
 }
