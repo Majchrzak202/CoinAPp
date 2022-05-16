@@ -1,14 +1,13 @@
 import React from "react";
 
-
-const Coin = ({name, price}) => {
-    return (
-        <div>
-        <h1>{name} {price.toFixed(2)} </h1>
-        <h2> Price:{price.toFixed(2)} $</h2>
-        
-        </div>
-    )
-}
+const Coin = ({ name, price, icon, id }) => {
+  return (
+    <div className="listitem">
+      <img className="image" src={icon}  alt={id}></img>
+      <h1>{name} </h1>
+      <p> Price:{price.toFixed(2)} $</p>
+    </div>
+  );
+};
 
 export default Coin;
