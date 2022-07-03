@@ -1,20 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import { Auth0Provider } from '@auth0/auth0-react';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 
+import { WishlistContextProvider } from "./store/WishlistContextProvider";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Auth0Provider
-  domain='dev--unc4no4.us.auth0.com'
-  clientId='FKNN2irhroDiMEr1Enrx5SEW7bX3Uudn'
-  redirectUri={window.location.origin}>
-
-    
+  <WishlistContextProvider>
     <App />
-  </Auth0Provider>
+  </WishlistContextProvider>
 );
-
-
