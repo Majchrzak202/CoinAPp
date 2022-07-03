@@ -1,15 +1,22 @@
 import React from "react";
 import Coin from "./Coin";
 
-const ListOfCrypto = ({ crypto }) => {
+const ListOfCrypto = ({ crypto, search }) => {
   return (
-    <ul>
-      {crypto.map((coin) => (
-        <Coin 
-        name={coin.name}
-        key={coin.id}
-        price={coin.price}/>
-      ))}
+    <ul className="list">
+      {crypto
+        .filter((coin) => {
+          return coin.name.toLowerCase().includes(search.toLowerCase());
+        })
+        .map((coin) => (
+          <Coin
+            name={coin.name}
+            key={coin.id}
+            price={coin.price}
+            icon={coin.icon}
+            id={coin.id}
+          />
+        ))}
     </ul>
   );
 };
