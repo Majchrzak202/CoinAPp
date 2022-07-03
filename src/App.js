@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import ListOfCrypto from "./ListOfCrypto";
 import "./App.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./Pages/Home";
+import Wishlist from "./Pages/Wishlist";
 
 const api = {
   base: "https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=INR",
@@ -34,26 +39,25 @@ function App() {
   };
 
   return (
-    <div>
-      <div>
-        <Header />
-      </div>
-      <div className="up">
-        {/* <button onClick={fetchCrypto}> FETCH COINS!</button> */}
-        <input
-          type="text"
-          placeholder="Search..."
-          onChange={(e) => setSearch(e.target.value)}
+    <BrowserRouter>
+      <Navbar />
+      <Wishlist/>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              setSearch={setSearch}
+              setCrypto={setCrypto}
+              search={search}
+              crypto={crypto}
+            />
+          }
         />
-      </div>
-
-      {isLoading && <p>Loading....</p>}
-      <div /* className='section' */>
-        <ListOfCrypto search={search} crypto={crypto} />
-        {error && <p>Something went wrong ({error})</p>}
-      </div>
-     <Footer /> 
-    </div>
+        <Route path="wishlist" element={<Wishlist />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
