@@ -1,13 +1,7 @@
 .up {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   padding-top: 20px;
   padding-bottom: 20px;
-  -webkit-box-pack: center;
-  -webkit-justify-conttent: center;
-  -ms-flex-pack: center;
   justify-content: center;
   font-weight: 800;
   border-width: 1px;
@@ -47,29 +41,6 @@
   text-align: center;
 }
 
-.navul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-.navli {
-  margin: 0;
-  margin-left: 2rem;
-}
-
-.nav a {
-  text-decoration: none;
-  color: white;
-}
-
-.nav a:hover,
-.nav a:active {
-  color: #f3cafb;
-}
-
 .header {
   position: relative;
   top: 0;
@@ -83,7 +54,14 @@
   padding: 0 5rem;
 }
 
-.footer { 
+.navbar {
+  display: flex;
+  flex-direction: row;
+  min-width: 100vw;
+  min-height: 10vh;
+}
+
+.footer {
   background-color: aqua;
   border-top: 2px solid aqua;
   position: fixed;
@@ -91,5 +69,9 @@
   min-height: 30px;
   color: whitesmoke;
   font-size: 20px;
+}
 
+.whishlist {
+  max-width: 35px;
+  max-height: 35px;
 }
